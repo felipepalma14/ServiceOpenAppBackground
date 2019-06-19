@@ -43,7 +43,7 @@ public class ScreenOnOffService extends Service {
     @Override
     public void onCreate() {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             String CHANNEL_ID = "your_channel_id";
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
                     "Notification Channel Title",
@@ -97,7 +97,7 @@ public class ScreenOnOffService extends Service {
 
 
     private void keepServiceAlive() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             startForegroundService(new Intent(ScreenOnOffService.this, ScreenOnOffService.class));
         } else {
             startService(new Intent(ScreenOnOffService.this, ScreenOnOffService.class));

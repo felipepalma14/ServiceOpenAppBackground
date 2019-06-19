@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         win.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
 
         if (!isServiceRunning(mScreenOnOffService.getClass())) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 startForegroundService(new Intent(this, mScreenOnOffService.getClass()));
             } else {
                 startService(new Intent(this, mScreenOnOffService.getClass()));
